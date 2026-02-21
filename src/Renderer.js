@@ -1,9 +1,11 @@
+import { generateCurrentTemp } from "./containers/currentTemp.js";
 import { generateSearchBar } from "./containers/searchInputs.js";
 
 export class Renderer {
 
     constructor () {
         this.search = "singapore";
+        this.data = "";
     }
 
     async getData() {
@@ -13,15 +15,22 @@ export class Renderer {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const result = await response.json();
-            console.log(result);
+            this.data = await response.json();
+            console.log(this.data);
         } catch (error) {
             console.error(error.message);
         }
     }
 
     async loadPage() {
-        this.getData();
+        await this.getData();
         generateSearchBar(this);
+        generateCurrentTemp(this);
+    }
+
+    getWeatherIcon(icon, id) {
+        return `
+        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/${icon}.svg" id="${id}">
+        `
     }
 }

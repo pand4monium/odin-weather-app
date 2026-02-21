@@ -10,4 +10,19 @@
 #searchBarContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+#searchBar {
+    padding-left: 30px;
+    max-width: 120px;
+    font-size: 30px;
+
+    margin-right: 5px;
+}
+
+#searchButton {
+    font-size: 15px;
+
+    margin-left: 5px
 }

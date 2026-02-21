@@ -21,7 +21,7 @@ main {
 .container {
     border: 3px #aaa solid;
     border-radius: 30px;
-    margin: 15px;
+    margin: 10px;
 }
 
 #currentTempContainer {
@@ -37,6 +37,6 @@ main {
 #gridContainer {
     padding: 0;
     display: grid;
-    grid: 1fr 2fr / 1fr;
+    grid: 2fr 3fr / 1fr;
     gap: 10px
 }
