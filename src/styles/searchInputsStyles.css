@@ -1,0 +1,13 @@
+#searchInputs {
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0
+}
+
+#searchBarContainer {
+    display: flex;
+    flex-direction: row;
+}
