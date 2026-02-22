@@ -1,6 +1,7 @@
 // webpack.config.js
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 
@@ -16,9 +17,23 @@ export default {
     path: resolve(__dirname, "dist"),
     clean: true,
   },
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    port: 3000,
+    hot: true,
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/icons", to: "icons" },
+      ],
     }),
   ],
   module: {

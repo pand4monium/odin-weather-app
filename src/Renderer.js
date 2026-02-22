@@ -1,3 +1,4 @@
+import { generateAstronomy } from "./containers/astronomy.js";
 import { generateCurrentTemp } from "./containers/currentTemp.js";
 import { generateSearchBar } from "./containers/searchInputs.js";
 import { generateWeatherForecast } from "./containers/weatherForecast.js";
@@ -29,11 +30,13 @@ export class Renderer {
         generateSearchBar(this);
         generateCurrentTemp(this);
         generateWeatherForecast(this);
+        generateAstronomy(this);
     }
 
     getWeatherIcon(icon, id) {
+        console.log("Icon name:", icon);
         return `
-        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/SVG/1st%20Set%20-%20Color/${icon}.svg" class="${id}">
+        <img src="/icons/weather-conditions/${icon}.svg" class="${id}">
         `
     }
 
