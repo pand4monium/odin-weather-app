@@ -18,4 +18,11 @@ export const generateSearchBar = (renderer) => {
             renderer.loadPage();
         }
     })
+
+    searchBar.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && searchBar.value) {
+            renderer.search = searchBar.value;
+            renderer.loadPage();
+        }
+    })
 }
