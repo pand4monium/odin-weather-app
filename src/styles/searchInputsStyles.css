@@ -1,6 +1,9 @@
 #searchInputs {
     padding: 0;
-    margin: 0;
+    margin: 10px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -10,19 +13,29 @@
 #searchBarContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    width: 100%;
+    min-width: 0;
+    gap: 5px;
+    box-sizing: border-box;
+    padding-right: 20px;
 }
 
 #searchBar {
-    padding-left: 30px;
-    max-width: 120px;
-    font-size: 30px;
-
-    margin-right: 5px;
+    flex: 1 1 auto;
+    padding: 10px 20px;
+    min-width: 0;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 3px solid #aaa;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 #searchButton {
+    flex: 0 0 60px;
     font-size: 15px;
-
-    margin-left: 5px
+    padding: 0;
+    margin: 0;
+    border: 3px #aaa solid;
+    border-radius: 30px;
 }

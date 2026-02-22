@@ -2,8 +2,8 @@
 export const generateSearchBar = (renderer) => {
     const searchBarInnerHTML = `
     <div id="searchBarContainer">
-        <input type="text" id="searchBar" class="container" required>
-        <button id="searchButton" class="container">Search</button>
+        <input type="text" id="searchBar" required>
+        <button id="searchButton">Search</button>
     </div>
     <div id="unitsInput" class="container">
     </div>
