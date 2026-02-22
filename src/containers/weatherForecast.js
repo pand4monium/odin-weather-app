@@ -11,9 +11,14 @@ export const generateWeatherForecast = (renderer) => {
     table.innerHTML = renderer.data["days"].reduce((acc, dayData) => {
         return acc + `
         <tr>
-            <td>${dayData["datetime"]}</td>
+            <td class="forecastDate">${new Date(dayData["datetime"]).toLocaleDateString("en-GB", {
+                                                        day: "2-digit",
+                                                        month: "short",
+                                                        year: "numeric"
+                                                    }).replace(",", "")
+            }</td>
             <td>${renderer.getWeatherIcon(dayData["icon"], "small-icon")}</td>
-            <td>${renderer.convertTemp(dayData["temp"])}</td>
+            <td class="forecastTemp">${renderer.convertTemp(dayData["temp"])}</td>
         </tr>
         `
 

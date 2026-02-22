@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 50px;
 }
 
 #location-time {
@@ -15,16 +15,16 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 10px;
+    gap: 30px;
 }
 
 .large-icon {
-    width: 150px;
+    width: 200px;
 }
 
 #currentTemp > div {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 #weather-description {
