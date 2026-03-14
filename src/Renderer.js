@@ -34,10 +34,14 @@ export class Renderer {
     }
 
     getWeatherIcon(icon, id) {
-        console.log("Icon name:", icon);
         return `
         <img src="/icons/weather-conditions/${icon}.svg" class="${id}">
         `
+    }
+
+    getMeasurementIcon(icon, id) {
+        return `
+        <img src="/icons/measurements/${icon}.svg" class="${id}">`
     }
 
     convertTemp(temp) {

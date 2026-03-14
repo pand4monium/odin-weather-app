@@ -8,8 +8,8 @@ export const generateWeatherForecast = (renderer) => {
     console.log(renderer.data["days"]);
 
     const table = document.getElementById("weatherForecastTable")
-    table.innerHTML = renderer.data["days"].reduce((acc, dayData) => {
-        return acc + `
+    table.innerHTML = renderer.data["days"].reduce((acc, dayData, index) => {
+        return index < 8 ? acc + `
         <tr>
             <td class="forecastDate">${new Date(dayData["datetime"]).toLocaleDateString("en-GB", {
                                                         day: "2-digit",
@@ -20,7 +20,7 @@ export const generateWeatherForecast = (renderer) => {
             <td>${renderer.getWeatherIcon(dayData["icon"], "small-icon")}</td>
             <td class="forecastTemp">${renderer.convertTemp(dayData["temp"])}</td>
         </tr>
-        `
+        ` : acc;
 
     }, "")
 
